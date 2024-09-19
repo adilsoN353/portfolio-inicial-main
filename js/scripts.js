@@ -46,8 +46,11 @@ toggleTheme.addEventListener('click', () => {
     }
 });
 
-// Evento para cambiar el color primario de la página
-toggleColors.addEventListener('click', (e) => {
-    // Cambiamos la propiedad CSS 'primary-color' con base en el color seleccionado
-    rootStyles.setProperty('--primary-color', e.target.dataset.color);
+document.querySelectorAll('.colors__item').forEach(item => {
+    // Asigna el color de fondo y añade el evento click para cambiar el color primario
+    const color = item.dataset.color;
+    item.style.backgroundColor = color;
+    item.addEventListener('click', () => {
+        rootStyles.setProperty('--primary-color', color);
+    });
 });

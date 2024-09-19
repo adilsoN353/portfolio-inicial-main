@@ -245,7 +245,7 @@ body.dark {
     --bg-card-color: hsl(0, 0%, 92%);
     --transition: color 0.4s, background-color 0.3s ease-in-out;
     --border-radius: 0.4em;
-    --skills-bar-length: 0%;
+    --skills-bar-lenght: 0%;
 }
 
 * {
@@ -258,7 +258,7 @@ a {
 }
 
 img {
-    max-width: 50%;
+    max-width: 100%;
     display: grid;
 }
 
@@ -316,6 +316,14 @@ body.dark {
     border: 1px solid var(--text-color);
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    background-color: var(--text-color);
+    /* Valor por defecto para evitar que el color sea vacío */
+}
+
+/* Aplicamos el color basado en el atributo data-color */
+.colors__item[data-color] {
+    background-color: attr(data-color color);
+    /* Se aplica el color del atributo */
 }
 
 .colors__item:hover {
@@ -341,6 +349,8 @@ body.dark {
 @media screen and (min-width: 720px) {
     .column--right {
         grid-template-columns: repeat(3, 1fr);
+        margin-left: 1em;
+        align-items: start;
     }
 }
 
@@ -356,8 +366,8 @@ body.dark {
     color: var(--primary-color);
 }
 
-.skills__bar,
-.skills__bar::after {
+/* Corrección de las barras de habilidades */
+.skills__bar {
     position: relative;
     width: 100%;
     height: 8px;
@@ -369,28 +379,81 @@ body.dark {
 .skills__bar::after {
     content: "";
     position: absolute;
-    left: -100%;
+    left: 0;
+    /* Se ajusta el valor inicial */
+    width: 0;
+    /* La animación ahora manejará el ancho */
+    height: 100%;
     background-color: var(--primary-color);
     animation: skills-bar-fill 2s ease-in-out forwards;
 }
 
+/* Se reemplaza la lógica del transform por el uso de width */
+.skills__bar--90::after {
+    animation: skills-bar-fill 2s ease-in-out forwards;
+    width: 90%;
+}
+
 .skills__bar--80::after {
-    --skills-bar-length: 80%;
+    animation: skills-bar-fill 2s ease-in-out forwards;
+    width: 80%;
 }
 
 .skills__bar--70::after {
-    --skills-bar-length: 70%;
+    animation: skills-bar-fill 2s ease-in-out forwards;
+    width: 70%;
+}
+
+.skills__bar--60::after {
+    animation: skills-bar-fill 2s ease-in-out forwards;
+    width: 60%;
 }
 
 .skills__bar--50::after {
-    --skills-bar-length: 50%;
+    animation: skills-bar-fill 2s ease-in-out forwards;
+    width: 50%;
+}
+
+.skills__bar--40::after {
+    animation: skills-bar-fill 2s ease-in-out forwards;
+    width: 40%;
+}
+
+.skills__bar--30::after {
+    animation: skills-bar-fill 2s ease-in-out forwards;
+    width: 30%;
 }
 
 @keyframes skills-bar-fill {
+
     to {
-        transform: translateX(var(--skills-bar-length));
+        transform: translateX(var(--skills-bar-lenght));
+        /* El width ahora se anima desde 0 hasta el valor especificado */
     }
 }
+
+.experience {
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.experience__image {
+    max-width: 60%;
+    max-height: 55%;
+    margin-right: 1em;
+}
+
+.experience__time {
+    font-size: 0.8rem;
+    margin-bottom: 0.5em;
+}
+
+
 
 .icon {
     margin-right: 1em;
