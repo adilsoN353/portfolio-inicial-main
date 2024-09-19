@@ -22,6 +22,7 @@
 
 
 // Seleccionamos los elementos del DOM que vamos a usar
+// Seleccionamos los elementos del DOM que vamos a usar
 const toggleTheme = document.getElementById('toggle-theme');
 const toggleIcon = document.getElementById('toggle-icon');
 const toggleText = document.getElementById('toggle-text');

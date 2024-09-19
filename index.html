@@ -88,42 +88,30 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Meta tags importantes para la compatibilidad y el responsive design -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Archivo CSS externo para estilos globales -->
   <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Enlace a Font Awesome para iconos de redes sociales y otros íconos útiles -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-  <!-- Título de la página -->
   <title>Portfolio</title>
 </head>
 
 <body class="dark">
-  <!-- Encabezado que incluye el interruptor de tema (dark/light) y los colores temáticos -->
+  <!-- Header -->
   <header class="header">
-    <!-- Contenedor para el interruptor de tema -->
     <div class="switches">
       <div id="toggle-theme" class="toggle-theme">
-        <!-- Icono de tema (luna/sol) para cambiar entre modo oscuro y claro -->
         <img id="toggle-icon" src="assets/icons/moon.svg" alt="icon theme" class="toggle-theme__icon">
-        <!-- Texto que indica el modo actual -->
         <p id="toggle-text" class="toggle-theme__text">Dark Mode</p>
       </div>
     </div>
 
-    <!-- Contenedor de colores para cambiar el color primario del tema -->
+    <!-- Color Picker -->
     <div id="toggle-colors" class="colors">
-      <!-- Cada div representa un color diferente, que se puede seleccionar para personalizar el tema -->
       <div data-color="hsl(214, 84%, 56%)" class="colors__item colors__item--blue"></div>
       <div data-color="hsl(150, 84%, 56%)" class="colors__item colors__item--green"></div>
       <div data-color="hsl(276, 84%, 56%)" class="colors__item colors__item--purple"></div>
@@ -131,36 +119,27 @@
     </div>
   </header>
 
-  <!-- Contenido principal de la página -->
+  <!-- Main Content -->
   <main class="main">
-    <!-- Columna izquierda donde se encuentra la tarjeta del perfil -->
+    <!-- Left Column: Personal Info -->
     <section class="column column--left">
-      <!-- Tarjeta del perfil personal -->
       <article class="card card--profile">
-        <!-- Contenedor de la imagen del perfil -->
         <div class="card__image-container">
-          <!-- Imagen del perfil (debería ser una imagen personal) -->
           <img src="/assets/images/image.svg.jpg" alt="Profile Image" />
         </div>
         <div class="card-header">
-          <!-- Nombre del desarrollador -->
           <h2 class="card__title">Adilson Aguilar</h2>
-          <!-- Título profesional -->
           <p class="card__subtitle">Full Stack Developer</p>
         </div>
         <div class="card__body">
-          <!-- Información de contacto -->
           <div class="card__link">
             <i class="fas fa-envelope icon"></i>
-            <!-- Enlace al correo electrónico -->
             <a href="mailto:adilso353@gmail.com">adilso353@gmail.com</a>
           </div>
           <div class="card__link">
             <i class="fas fa-phone-alt icon"></i>
-            <!-- Número de teléfono con un enlace para llamar -->
             <a href="tel:+34 612 54 36 51">+34 612 54 36 51</a>
           </div>
-          <!-- Breve descripción sobre ti -->
           <p class="card__text">
             Full Stack Developer with experience in code optimization, performance improvements,
             and solution implementation. Passionate about learning and improving every day in a dynamic environment.
@@ -169,13 +148,12 @@
       </article>
     </section>
 
-    <!-- Columna derecha donde se muestran las habilidades -->
+    <!-- Right Columns: Skills -->
     <section class="column column--right">
-      <!-- Tarjeta que muestra las habilidades front-end -->
+      <!-- Front-End Skills -->
       <article class="card">
         <h2 class="card__title">Front-End Skills</h2>
         <div class="skills">
-          <!-- Cada bloque representa una habilidad con una barra de progreso -->
           <div class="skills__items">
             <p class="skills__tech">HTML</p>
             <div class="skills__bar skills__bar--80"></div>
@@ -194,12 +172,56 @@
           </div>
         </div>
       </article>
+
+      <!-- Back-End Skills -->
+      <article class="card">
+        <h2 class="card__title">Back-End Skills</h2>
+        <div class="skills">
+          <div class="skills__items">
+            <p class="skills__tech">Node.js</p>
+            <div class="skills__bar skills__bar--80"></div>
+          </div>
+          <div class="skills__items">
+            <p class="skills__tech">Python</p>
+            <div class="skills__bar skills__bar--70"></div>
+          </div>
+          <div class="skills__items">
+            <p class="skills__tech">SQL</p>
+            <div class="skills__bar skills__bar--50"></div>
+          </div>
+          <div class="skills__items">
+            <p class="skills__tech">Flask</p>
+            <div class="skills__bar skills__bar--60"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Other Technologies -->
+      <article class="card">
+        <h2 class="card__title">Other Technologies</h2>
+        <div class="skills">
+          <div class="skills__items">
+            <p class="skills__tech">Git</p>
+            <div class="skills__bar skills__bar--80"></div>
+          </div>
+          <div class="skills__items">
+            <p class="skills__tech">Docker</p>
+            <div class="skills__bar skills__bar--70"></div>
+          </div>
+          <div class="skills__items">
+            <p class="skills__tech">CI/CD</p>
+            <div class="skills__bar skills__bar--50"></div>
+          </div>
+          <div class="skills__items">
+            <p class="skills__tech">Linux</p>
+            <div class="skills__bar skills__bar--60"></div>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
 
-  <!-- Archivo JavaScript para el comportamiento dinámico de la página -->
   <script src="js/scripts.js"></script>
-  <!-- Carga de Font Awesome Kit para íconos adicionales -->
   <script src="https://kit.fontawesome.com/90d8ffd3e8.js" crossorigin="anonymous"></script>
 </body>
 

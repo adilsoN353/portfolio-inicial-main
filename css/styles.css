@@ -248,7 +248,6 @@ body.dark {
     --skills-bar-length: 0%;
 }
 
-/* Global styles */
 * {
     box-sizing: border-box;
 }
@@ -259,8 +258,8 @@ a {
 }
 
 img {
-    max-width: 100%;
-    display: block;
+    max-width: 50%;
+    display: grid;
 }
 
 body {
@@ -277,7 +276,6 @@ body.dark {
     --bg-card-color: hsl(0, 0%, 20%);
 }
 
-/* Header styles */
 .header {
     display: flex;
     align-items: center;
@@ -317,14 +315,13 @@ body.dark {
     height: 30px;
     border: 1px solid var(--text-color);
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
 .colors__item:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
-/* Main and column layout */
 .main {
     display: grid;
     padding: 2em;
@@ -332,46 +329,37 @@ body.dark {
 
 @media screen and (min-width: 720px) {
     .main {
-        grid-template-columns: min-content 1fr;
+        grid-template-columns: 1fr 2fr;
     }
 }
 
 .column {
     display: grid;
-    gap: 0.5em;
+    gap: 1em;
 }
 
 @media screen and (min-width: 720px) {
     .column--right {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, min-content);
     }
 }
 
-/* Card styles */
 .card {
     padding: 1em;
     background-color: var(--bg-card-color);
     border-radius: var(--border-radius);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.2);
 }
 
-.card:hover {
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+.card__title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
 }
 
-.card__image-container {
-    min-width: 320px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-}
-
-/* Skills section with animations */
 .skills__bar,
 .skills__bar::after {
     position: relative;
-    width: 175px;
+    width: 100%;
     height: 8px;
     background-color: #888;
     border-radius: var(--border-radius);
@@ -381,9 +369,8 @@ body.dark {
 .skills__bar::after {
     content: "";
     position: absolute;
-    left: -175px;
+    left: -100%;
     background-color: var(--primary-color);
-    transition: var(--transition);
     animation: skills-bar-fill 2s ease-in-out forwards;
 }
 
@@ -399,17 +386,12 @@ body.dark {
     --skills-bar-length: 50%;
 }
 
-.skills__bar--60::after {
-    --skills-bar-length: 60%;
-}
-
 @keyframes skills-bar-fill {
     to {
         transform: translateX(var(--skills-bar-length));
     }
 }
 
-/* Icon styles */
 .icon {
     margin-right: 1em;
 }
